@@ -1,11 +1,12 @@
 # directory patterns
-test/media
-test/static
-migrations/
+*.egg-info/
 __pycache__/
 build/
 dist/
-*.egg-info/
+media/
+migrations/
+static/
 
 # file patterns
 db.sqlite3
+*.pyc

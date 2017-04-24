@@ -1,17 +1,28 @@
 #! /usr/bin/bash
+# Settings
+ENV_NAME="softbutterfly-django-mailauth"
+APP_NAME="mailauth"
+
+# delete old stuff
+find . -name migrations -type d -exec rm -r {} \;
+rm -r test/media
+rm -r test/static
+rm -r test/db.sqlite3
+conda env remove -n ${ENV_NAME} -y
+
 # Create necesary directories
 mkdir test/media
 mkdir test/static
 
 # Create the conda environment
-conda create --name softbutterfly-django-mailauth --file requirements.test.conda -y
-source activate softbutterfly-django-mailauth
+conda create --name ${ENV_NAME} --file requirements.test.conda -y
+source activate ${ENV_NAME}
 
 # Install pip dependendies
 pip install -r requirements.test.pip
 
 # Link module directory to the environment library (only for development)
-env_path="$(conda info --env | grep softbutterfly-django-mailauth)"
+env_path="$(conda info --env | grep ${ENV_NAME})"
 env_path="/${env_path#*/}"
 
 library_path="${env_path}/lib/python3.6/site-packages/"
@@ -20,9 +31,9 @@ module_path="$(pwd)/softbutterfly/"
 ln -s "${module_path}" "${library_path}"
 
 # Running all the django stuff
-source activate softbutterfly-django-mailauth
+source activate ${ENV_NAME}
 cd test
-python manage.py makemigrations mailauth
+python manage.py makemigrations ${APP_NAME}
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
