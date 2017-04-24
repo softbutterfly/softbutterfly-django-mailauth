@@ -3,9 +3,9 @@
 __pycache__/
 build/
 dist/
-media/
-# migrations/
-static/
+migrations/
+test/media/
+test/static/
 
 # file patterns
 db.sqlite3
