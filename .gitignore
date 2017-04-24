@@ -1,0 +1,8 @@
+# directory patterns
+test/media
+test/static
+migrations/
+__pycache__/
+
+# file patterns
+db.sqlite3
