@@ -4,4 +4,4 @@ A drop-in module for users indentified by email. Inspired by this [article](http
 
 ## Authors
 
-Matin Vuelta - [@zodiacfireworks](https://github.com/zodiacfireworks)
+* [@zodiacfireworks](https://github.com/zodiacfireworks)

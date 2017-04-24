@@ -1,3 +1,3 @@
 # Authors
 
-Matin Vuelta - [@zodiacfireworks](https://github.com/zodiacfireworks)
+[@zodiacfireworks](https://github.com/zodiacfireworks)
