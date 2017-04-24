@@ -3,6 +3,9 @@ test/media
 test/static
 migrations/
 __pycache__/
+build/
+dist/
+*.egg-info/
 
 # file patterns
 db.sqlite3
